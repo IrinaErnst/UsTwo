@@ -10,7 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var myProfileImageView: UIImageView!
+    @IBOutlet weak var linkedInImageView: UIImageView!
+    @IBOutlet weak var githubImageView: UIImageView!
+    @IBOutlet weak var facebookImageView: UIImageView!
+    @IBOutlet weak var messageImageView: UIImageView!
+    @IBOutlet weak var hireMeButton: UIButton!
+    
     
     
     override func viewDidLoad() {
@@ -24,6 +31,7 @@ class ViewController: UIViewController {
     
     func setVC(){
         setmyProfileImage()
+        setHireMeButton()
     }
     
     func setmyProfileImage(){
@@ -35,6 +43,11 @@ class ViewController: UIViewController {
         myProfileImageView.layer.borderColor = whiteColor.cgColor
         myProfileImageView.layer.borderWidth = 3
         myProfileImageView.clipsToBounds = true
+        view.addSubview(myProfileImageView)
+    }
+    
+    func setHireMeButton() {
+        
     }
 }
 
