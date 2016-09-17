@@ -1,16 +1,17 @@
 # UsTwo
 
 Author: Irina Ernst
+
 Date: September 16th, 2016
 
-#Development
+##Development
 
-Github 
+###Github: 
 git push
 
-Requirements
+###Requirements:
 Xcode 8.0
 Swift 3.0
 
-Pods
+###Pods:
 None
