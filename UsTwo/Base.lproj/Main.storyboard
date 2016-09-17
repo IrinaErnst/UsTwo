@@ -18,12 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YAK-si-HPO">
-                                <frame key="frameInset" minX="66" minY="112" width="242" height="224"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YAK-si-HPO">
+                                <frame key="frameInset" minX="66" minY="112" width="242" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="242" id="t9D-bI-QR4"/>
+                                    <constraint firstAttribute="width" constant="242" id="zLY-wb-ATB"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="YAK-si-HPO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="JPG-Z8-UeL"/>
                             <constraint firstItem="YAK-si-HPO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bBc-1h-qai"/>
                         </constraints>
                     </view>
