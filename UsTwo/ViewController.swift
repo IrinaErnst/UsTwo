@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     @IBOutlet weak var myProfileImageView: UIImageView!
     @IBOutlet weak var linkedInImageView: UIImageView!
@@ -25,7 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var widthMyProfileImageViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightMyProfileImageViewConstraint: NSLayoutConstraint!
     
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setVC()
@@ -61,19 +60,15 @@ class ViewController: UIViewController {
             case linkedInImageView:
                 item.image = #imageLiteral(resourceName: "LinkedIn")
                 num = 1
-                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageLinkedInTapped(sender:)))
             case githubImageView:
                 item.image = #imageLiteral(resourceName: "Github")
                 num = 2
-                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageGithubTapped(sender:)))
             case facebookImageView:
                 item.image = #imageLiteral(resourceName: "Facebook")
                 num = 3
-                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageFacebookTapped(sender:)))
             case messageImageView:
                 item.image = #imageLiteral(resourceName: "Message")
                 num = 4
-                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageMessageTapped(sender:)))
             default: print("ERROR")
             }
             item.contentMode = UIViewContentMode.scaleAspectFill
@@ -101,7 +96,6 @@ class ViewController: UIViewController {
         let wigthHireMeButtonEdgeConstraint = NSLayoutConstraint(item: hireMeButton, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: myProfileImageView, attribute: NSLayoutAttribute.width, multiplier: 1.0, constant: 0)
         bottomHireMeButtonConstraint = NSLayoutConstraint(item: hireMeButton, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: view, attribute: NSLayoutAttribute.bottomMargin, multiplier: 1.0, constant: -130)
         view.addConstraints([centerXHireMeButtonConstraint, wigthHireMeButtonEdgeConstraint, bottomHireMeButtonConstraint])
-        
     }
     
     @IBAction func hireMeButtonTouched(sender: UIButton!){
@@ -126,7 +120,6 @@ class ViewController: UIViewController {
     }
     
     func imageLinkedInTapped(sender: UITapGestureRecognizer){
-        print(sender.view?.tag)
         if let item = sender.view?.tag {
             switch item {
             case 1: print("TAPPED LIKED IN")
@@ -136,9 +129,7 @@ class ViewController: UIViewController {
             default: print("ERROR")
             }
         }
-}
-    
-    
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let isPortrait = size.height > size.width
