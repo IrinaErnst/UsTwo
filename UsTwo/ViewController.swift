@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var githubImageView: UIImageView!
     @IBOutlet weak var facebookImageView: UIImageView!
     @IBOutlet weak var messageImageView: UIImageView!
+    var hireMeButton: UIButton!
     
     var bottomHireMeButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomMyPortfolioImageViewConstraint: NSLayoutConstraint!
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
     
     func setVC(){
         setmyProfileImage()
+        setStackImages()
         setHireMeButton()
     }
     
@@ -39,7 +41,7 @@ class ViewController: UIViewController {
         let whiteColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         myProfileImageView.image = #imageLiteral(resourceName: "Monkey")
         myProfileImageView.contentMode = UIViewContentMode.scaleAspectFill
-        myProfileImageView.layer.masksToBounds = false
+        myProfileImageView.layer.masksToBounds = true
         myProfileImageView.layer.cornerRadius = CGFloat(roundf(Float(myProfileImageView.frame.size.width/2.0)))
         myProfileImageView.layer.borderColor = whiteColor.cgColor
         myProfileImageView.layer.borderWidth = 3
@@ -47,14 +49,33 @@ class ViewController: UIViewController {
         view.addSubview(myProfileImageView)
     }
     
+    func setStackImages(){
+        let socialMediaImageViews: Array<UIImageView> = [linkedInImageView, githubImageView, facebookImageView, messageImageView]
+        for item in socialMediaImageViews {
+            print(item)
+            switch item {
+            case linkedInImageView:
+                item.image = #imageLiteral(resourceName: "LinkedIn")
+            case githubImageView:
+                item.image = #imageLiteral(resourceName: "Github")
+            case facebookImageView:
+                item.image = #imageLiteral(resourceName: "Facebook")
+            case messageImageView:
+                item.image = #imageLiteral(resourceName: "Message")
+            default: print("ERROR")
+            }
+            item.contentMode = UIViewContentMode.scaleAspectFill
+        }
+    }
+    
     func setHireMeButton() {
-        let hireMeButton = UIButton.init(type: UIButtonType.system)
+        hireMeButton = UIButton.init(type: UIButtonType.system)
         hireMeButton.setTitle("Hire Me!", for: UIControlState.normal)
         hireMeButton.setTitleColor(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: UIControlState.normal)
         hireMeButton.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        hireMeButton.backgroundColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        hireMeButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         hireMeButton.layer.cornerRadius = 5
-        //hireMeButton.addTarget(self, action: Selector(("hireMeButtonTouched:")), for: UIControlEvents.touchUpInside)
+        hireMeButton.addTarget(self, action: #selector(hireMeButtonTouched(sender:)), for: UIControlEvents.touchUpInside)
         view.addSubview(hireMeButton)
         
         //Auto-layout
@@ -66,8 +87,10 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func hireMeButtonTouched(sender: AnyObject){
+    @IBAction func hireMeButtonTouched(sender: UIButton!){
         print("HELLO!")
+        hireMeButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
