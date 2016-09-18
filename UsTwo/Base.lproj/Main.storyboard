@@ -69,6 +69,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomMyPortfolioImageViewConstraint" destination="KTI-Dy-AGi" id="Ass-zc-kwR"/>
+                        <outlet property="bottomStackImageViewsConstraint" destination="ff3-T7-kNy" id="Jdp-j6-VwX"/>
                         <outlet property="facebookImageView" destination="1q4-HM-Lc9" id="YPz-EC-QC8"/>
                         <outlet property="githubImageView" destination="qEF-j9-Isg" id="02U-sb-cd9"/>
                         <outlet property="linkedInImageView" destination="kk1-b1-IHL" id="h7G-7e-qfZ"/>
