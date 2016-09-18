@@ -18,15 +18,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageImageView: UIImageView!
     var hireMeButton: UIButton!
     
+    //Constraints
     var bottomHireMeButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomMyPortfolioImageViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var bottomStackImageViewsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthMyProfileImageViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightMyProfileImageViewConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setVC()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -51,20 +55,33 @@ class ViewController: UIViewController {
     
     func setStackImages(){
         let socialMediaImageViews: Array<UIImageView> = [linkedInImageView, githubImageView, facebookImageView, messageImageView]
+        var num = 0
         for item in socialMediaImageViews {
-            print(item)
             switch item {
             case linkedInImageView:
                 item.image = #imageLiteral(resourceName: "LinkedIn")
+                num = 1
+                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageLinkedInTapped(sender:)))
             case githubImageView:
                 item.image = #imageLiteral(resourceName: "Github")
+                num = 2
+                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageGithubTapped(sender:)))
             case facebookImageView:
                 item.image = #imageLiteral(resourceName: "Facebook")
+                num = 3
+                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageFacebookTapped(sender:)))
             case messageImageView:
                 item.image = #imageLiteral(resourceName: "Message")
+                num = 4
+                //let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageMessageTapped(sender:)))
             default: print("ERROR")
             }
             item.contentMode = UIViewContentMode.scaleAspectFill
+            
+            let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageLinkedInTapped(sender:)))
+            item.isUserInteractionEnabled = true
+            item.tag = num
+            item.addGestureRecognizer(tapGestureRecognizer)
         }
     }
     
@@ -88,10 +105,40 @@ class ViewController: UIViewController {
     }
     
     @IBAction func hireMeButtonTouched(sender: UIButton!){
-        print("HELLO!")
-        hireMeButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
-        
+        UIView.animate(withDuration: 0.25) {
+            self.hireMeButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        }
+        animateMyProforileImageView()
     }
+    
+    func animateMyProforileImageView() {
+        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3, options: [.autoreverse], animations: {
+            self.widthMyProfileImageViewConstraint.constant = 320
+            self.heightMyProfileImageViewConstraint.constant = 320
+            self.myProfileImageView.image = #imageLiteral(resourceName: "Monkey Surprised")
+            self.view.layoutIfNeeded()
+            }) { (isFinished) in
+                self.widthMyProfileImageViewConstraint.constant = 242
+                self.heightMyProfileImageViewConstraint.constant = 242
+                self.myProfileImageView.image = #imageLiteral(resourceName: "Monkey")
+                self.view.layoutIfNeeded()
+        }
+    }
+    
+    func imageLinkedInTapped(sender: UITapGestureRecognizer){
+        print(sender.view?.tag)
+        if let item = sender.view?.tag {
+            switch item {
+            case 1: print("TAPPED LIKED IN")
+            case 2: print("TAPPED GITHUB")
+            case 3: print("TAPPED GITHUB")
+            case 4: print("TAPPED MSG")
+            default: print("ERROR")
+            }
+        }
+}
+    
+    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let isPortrait = size.height > size.width
@@ -99,12 +146,10 @@ class ViewController: UIViewController {
         
         UIView.animate(withDuration: 0.25) {
             if isPortrait {
-                print("Portrait")
                 self.bottomHireMeButtonConstraint.constant = -130
                 self.bottomMyPortfolioImageViewConstraint.constant = 30
                 self.bottomStackImageViewsConstraint.constant = 30
             } else if isLandscape {
-                print("Landscape")
                 self.bottomHireMeButtonConstraint.constant = -10
                 self.bottomMyPortfolioImageViewConstraint.constant = 10
                 self.bottomStackImageViewsConstraint.constant = 10
@@ -113,7 +158,6 @@ class ViewController: UIViewController {
             }
             self.view.layoutIfNeeded()
         }
-        
     }
 }
 

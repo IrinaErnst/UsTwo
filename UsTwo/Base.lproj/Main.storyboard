@@ -68,9 +68,11 @@
                         <outlet property="bottomStackImageViewsConstraint" destination="ff3-T7-kNy" id="Jdp-j6-VwX"/>
                         <outlet property="facebookImageView" destination="1q4-HM-Lc9" id="YPz-EC-QC8"/>
                         <outlet property="githubImageView" destination="qEF-j9-Isg" id="02U-sb-cd9"/>
+                        <outlet property="heightMyProfileImageViewConstraint" destination="t9D-bI-QR4" id="keK-Nc-MS9"/>
                         <outlet property="linkedInImageView" destination="kk1-b1-IHL" id="h7G-7e-qfZ"/>
                         <outlet property="messageImageView" destination="8SO-UT-AvY" id="9rb-zG-qKh"/>
                         <outlet property="myProfileImageView" destination="YAK-si-HPO" id="Iet-Kv-duJ"/>
+                        <outlet property="widthMyProfileImageViewConstraint" destination="zLY-wb-ATB" id="ds4-nm-G2x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
