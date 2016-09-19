@@ -29,10 +29,14 @@
                                 <frame key="frameInset" minX="68" minY="392" width="240" height="54"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kk1-b1-IHL">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="NbC-Av-dbo"/>
                                             <constraint firstAttribute="height" constant="54" id="svg-FV-xOD"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Va0-WH-826" appends="YES" id="znX-yj-0Gf"/>
+                                        </connections>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qEF-j9-Isg">
                                         <constraints>
@@ -63,6 +67,7 @@
                             <constraint firstItem="Zfm-Rc-7jf" firstAttribute="top" secondItem="YAK-si-HPO" secondAttribute="bottom" constant="30" id="ff3-T7-kNy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="SZv-qd-Qn6"/>
                     <connections>
                         <outlet property="bottomMyPortfolioImageViewConstraint" destination="KTI-Dy-AGi" id="Ass-zc-kwR"/>
                         <outlet property="bottomStackImageViewsConstraint" destination="ff3-T7-kNy" id="Jdp-j6-VwX"/>
@@ -76,8 +81,56 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Va0-WH-826">
+                    <connections>
+                        <segue destination="Gsd-kg-tBy" kind="presentation" identifier="LinkedInSegue" id="EN5-SW-a5M"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Linked In View Controller-->
+        <scene sceneID="G9J-es-dD7">
+            <objects>
+                <viewController id="FMN-Cj-mtj" customClass="LinkedInViewController" customModule="UsTwo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ygP-Eb-G0O"/>
+                        <viewControllerLayoutGuide type="bottom" id="EYp-OU-OJN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="82r-Zv-vAW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoI-w9-uh4">
+                                <frame key="frameInset" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3UT-5e-R2I"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LNm-wO-T67" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2618" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3j1-kF-XKO">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCJ-N9-kkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gsd-kg-tBy" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="psX-B9-1jE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FMN-Cj-mtj" kind="relationship" relationship="rootViewController" id="3OS-0z-jEg"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1847.2" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

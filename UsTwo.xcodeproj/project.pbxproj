@@ -15,6 +15,7 @@
 		A751899F1D8CBC600085BAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A751899D1D8CBC600085BAC7 /* LaunchScreen.storyboard */; };
 		A75189AA1D8CBC600085BAC7 /* UsTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189A91D8CBC600085BAC7 /* UsTwoTests.swift */; };
 		A75189B51D8CBC600085BAC7 /* UsTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189B41D8CBC600085BAC7 /* UsTwoUITests.swift */; };
+		A75189C31D8F65E50085BAC7 /* LinkedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189C21D8F65E50085BAC7 /* LinkedInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		A75189B01D8CBC600085BAC7 /* UsTwoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsTwoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75189B41D8CBC600085BAC7 /* UsTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsTwoUITests.swift; sourceTree = "<group>"; };
 		A75189B61D8CBC600085BAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A75189C21D8F65E50085BAC7 /* LinkedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				A75189911D8CBC600085BAC7 /* AppDelegate.swift */,
 				A75189931D8CBC600085BAC7 /* ViewController.swift */,
+				A75189C21D8F65E50085BAC7 /* LinkedInViewController.swift */,
 				A75189951D8CBC600085BAC7 /* Main.storyboard */,
 				A751899B1D8CBC600085BAC7 /* Assets.xcassets */,
 				A751899D1D8CBC600085BAC7 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A75189C31D8F65E50085BAC7 /* LinkedInViewController.swift in Sources */,
 				A75189941D8CBC600085BAC7 /* ViewController.swift in Sources */,
 				A751899A1D8CBC600085BAC7 /* UsTwo.xcdatamodeld in Sources */,
 				A75189921D8CBC600085BAC7 /* AppDelegate.swift in Sources */,
@@ -516,6 +520,7 @@
 				A75189BB1D8CBC600085BAC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A75189BC1D8CBC600085BAC7 /* Build configuration list for PBXNativeTarget "UsTwoTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +529,7 @@
 				A75189BE1D8CBC600085BAC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A75189BF1D8CBC600085BAC7 /* Build configuration list for PBXNativeTarget "UsTwoUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +538,7 @@
 				A75189C11D8CBC600085BAC7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

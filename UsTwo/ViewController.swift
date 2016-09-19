@@ -106,14 +106,16 @@ class ViewController: UIViewController {
     }
     
     func animateMyProforileImageView() {
-        UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3, options: [.autoreverse], animations: {
+        UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3, options: [.autoreverse], animations: {
             self.widthMyProfileImageViewConstraint.constant = 320
             self.heightMyProfileImageViewConstraint.constant = 320
+            self.myProfileImageView.layer.cornerRadius = CGFloat(160)
             self.myProfileImageView.image = #imageLiteral(resourceName: "Monkey Surprised")
             self.view.layoutIfNeeded()
             }) { (isFinished) in
                 self.widthMyProfileImageViewConstraint.constant = 242
                 self.heightMyProfileImageViewConstraint.constant = 242
+                self.myProfileImageView.layer.cornerRadius = CGFloat(121)
                 self.myProfileImageView.image = #imageLiteral(resourceName: "Monkey")
                 self.view.layoutIfNeeded()
         }
@@ -122,14 +124,26 @@ class ViewController: UIViewController {
     func imageLinkedInTapped(sender: UITapGestureRecognizer){
         if let item = sender.view?.tag {
             switch item {
-            case 1: print("TAPPED LIKED IN")
-            case 2: print("TAPPED GITHUB")
-            case 3: print("TAPPED GITHUB")
-            case 4: print("TAPPED MSG")
-            default: print("ERROR")
+            case 1:
+                print("TAPPED LIKED IN")
+                self.performSegue(withIdentifier: "LinkedInSegue", sender: nil)
+            case 2:
+                print("TAPPED GITHUB")
+            case 3:
+                print("TAPPED GITHUB")
+            case 4:
+                print("TAPPED MSG")
+            default:
+                print("ERROR")
             }
         }
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "LinkedInSegue" {
+//            
+//        }
+//    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let isPortrait = size.height > size.width

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A73375DB8036CBDA7B508EE8EF34F64636A9F658",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "395E747C6104EE6DD9DDDDF84F51EBC62CEBBAFB" : 9223372036854775807,
+    "A73375DB8036CBDA7B508EE8EF34F64636A9F658" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "684FA28B-3D2F-4BD8-A46C-B0F9F5131D57",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "395E747C6104EE6DD9DDDDF84F51EBC62CEBBAFB" : "..",
+    "A73375DB8036CBDA7B508EE8EF34F64636A9F658" : "ustwo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UsTwo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UsTwo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.heroku.com\/travelmatch-capstone.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "395E747C6104EE6DD9DDDDF84F51EBC62CEBBAFB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:IrinaErnst\/UsTwo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A73375DB8036CBDA7B508EE8EF34F64636A9F658"
+    }
+  ]
+}
