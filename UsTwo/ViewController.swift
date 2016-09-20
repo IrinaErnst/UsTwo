@@ -8,8 +8,10 @@
 
 import UIKit
 import LocalAuthentication
+import MessageUI
+import MobileCoreServices
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate {
     
     @IBOutlet weak var myProfileImageView: UIImageView!
     @IBOutlet weak var linkedInImageView: UIImageView!
@@ -27,10 +29,16 @@ class ViewController: UIViewController {
     
     var iconName:String!
     
+    //Authentication
+    var error : NSError?
+    var myLocalizedReasonString : NSString = "Authentication is required"
+    var alert = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+    var statusText: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setVC()
+        resetTouchID()
     }
     
     override func didReceiveMemoryWarning() {
@@ -72,7 +80,7 @@ class ViewController: UIViewController {
             case messageImageView:
                 item.image = #imageLiteral(resourceName: "Message")
                 num = 4
-            default: print("ERROR")
+            default: print("Autenthication Error")
             }
             item.contentMode = UIViewContentMode.scaleAspectFill
             
@@ -128,12 +136,10 @@ class ViewController: UIViewController {
         if let item = sender.view?.tag {
             switch item {
             case 1:
-                print("TAPPED LINKED IN")
                 iconName = "Linked In"
                 print("IconName: %@", iconName)
                 self.performSegue(withIdentifier: "webSegue", sender: sender)
             case 2:
-                print("TAPPED GITHUB")
                 self.iconName = "Github"
                 self.performSegue(withIdentifier: "webSegue", sender: sender)
             case 3:
@@ -142,6 +148,8 @@ class ViewController: UIViewController {
             case 4:
                 print("TAPPED MSG")
                 self.iconName = "Message"
+                //authenticateUser()
+                sendMessage()
             default:
                 print("ERROR")
             }
@@ -177,5 +185,74 @@ class ViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+   
+    
+    func sendMessage() {
+        if MFMessageComposeViewController.canSendText() {
+            let messageVC = MFMessageComposeViewController()
+            messageVC.messageComposeDelegate = self
+            messageVC.recipients = ["4159874354"]
+            messageVC.body = "Hey! I'm with UsTwo team. Here is my location: ...."
+            present(messageVC, animated: true, completion: nil)
+        } else {
+            print("User hasn't setup Message app.")
+        }
+    }
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    func authenticateUser() {
+        let context : LAContext = LAContext()
+        print("Check if the device is actually compatible with Touch ID")
+        if context.canEvaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            //Call the evaluation method within the innermost brackets:
+            context.evaluatePolicy(LAPolicy.deviceOwnerAuthenticationWithBiometrics, localizedReason: myLocalizedReasonString as String, reply: {
+                (success : Bool, evaluationError : NSError?) in
+                
+                if success {
+                    OperationQueue.main.addOperation({ () -> Void in
+                        self.loadData()
+                    })
+                } else {
+                    print(evaluationError?.localizedDescription)
+                    print("Authentication failed")
+                    
+                }
+            } as! (Bool, Error?) -> Void )
+            
+        } else {
+            print("No local Authentification")
+            
+            alert.title = "ERROR!"
+            switch error!.code {
+            case LAError.touchIDNotAvailable.rawValue:
+                alert.message = "No Touch ID on device"
+            case LAError.touchIDNotEnrolled.rawValue:
+                alert.message = "No fingers enrolled"
+            case LAError.passcodeNotSet.rawValue:
+                alert.message = "No passcode set"
+            default:
+                alert.message = "Something went wrong getting local authentification"
+            }
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+
+    func loadData(){
+        print("Load Data")
+        //TODO: after auntification open messages
+    }
+    
+    func showPasswordAlert() {
+        //TODO
+    }
+    
+    func resetTouchID(){
+        //TODO
+    }
+    
 }
 

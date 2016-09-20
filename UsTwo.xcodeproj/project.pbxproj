@@ -16,6 +16,7 @@
 		A75189AA1D8CBC600085BAC7 /* UsTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189A91D8CBC600085BAC7 /* UsTwoTests.swift */; };
 		A75189B51D8CBC600085BAC7 /* UsTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189B41D8CBC600085BAC7 /* UsTwoUITests.swift */; };
 		A75189C31D8F65E50085BAC7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189C21D8F65E50085BAC7 /* WebViewController.swift */; };
+		A76B88C41D90E5E500DB28A1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A76B88C31D90E5E500DB28A1 /* MessageUI.framework */; };
 		A79023451D90A6FD001E8D63 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79023441D90A6FD001E8D63 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		A75189B41D8CBC600085BAC7 /* UsTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsTwoUITests.swift; sourceTree = "<group>"; };
 		A75189B61D8CBC600085BAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A75189C21D8F65E50085BAC7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A76B88C31D90E5E500DB28A1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A79023441D90A6FD001E8D63 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76B88C41D90E5E500DB28A1 /* MessageUI.framework in Frameworks */,
 				A79023451D90A6FD001E8D63 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +141,7 @@
 		A79023431D90A6FD001E8D63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A76B88C31D90E5E500DB28A1 /* MessageUI.framework */,
 				A79023441D90A6FD001E8D63 /* LocalAuthentication.framework */,
 			);
 			name = Frameworks;
@@ -222,7 +226,6 @@
 					};
 					A75189AF1D8CBC600085BAC7 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = B9NU7FF5WD;
 						ProvisioningStyle = Automatic;
 						TestTargetID = A751898D1D8CBC600085BAC7;
 					};
@@ -439,6 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.irina.UsTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -452,6 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.irina.UsTwo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -489,7 +494,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = B9NU7FF5WD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UsTwoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.irina.UsTwoUITests;
@@ -503,7 +509,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				DEVELOPMENT_TEAM = B9NU7FF5WD;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = UsTwoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = self.edu.irina.UsTwoUITests;
