@@ -11,6 +11,9 @@
 		9CAE165D9745898A6D503723 /* Pods_UsTwoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D219C6A5FCC40504CF1DCBB3 /* Pods_UsTwoUITests.framework */; };
 		A7503D311D9168BC006D2D27 /* ReposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503D301D9168BC006D2D27 /* ReposTableViewController.swift */; };
 		A7503D331D916920006D2D27 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503D321D916920006D2D27 /* Secrets.swift */; };
+		A7503D351D917092006D2D27 /* GitHubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503D341D917092006D2D27 /* GitHubAPIClient.swift */; };
+		A7503D371D917DA9006D2D27 /* GithubRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503D361D917DA9006D2D27 /* GithubRepository.swift */; };
+		A7503D391D918022006D2D27 /* ReposDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7503D381D918022006D2D27 /* ReposDataStore.swift */; };
 		A75189921D8CBC600085BAC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189911D8CBC600085BAC7 /* AppDelegate.swift */; };
 		A75189941D8CBC600085BAC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189931D8CBC600085BAC7 /* ViewController.swift */; };
 		A75189971D8CBC600085BAC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A75189951D8CBC600085BAC7 /* Main.storyboard */; };
@@ -47,6 +50,9 @@
 		95DAAFE1523702D9E2998658 /* Pods-UsTwo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UsTwo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UsTwo/Pods-UsTwo.debug.xcconfig"; sourceTree = "<group>"; };
 		A7503D301D9168BC006D2D27 /* ReposTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposTableViewController.swift; sourceTree = "<group>"; };
 		A7503D321D916920006D2D27 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		A7503D341D917092006D2D27 /* GitHubAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubAPIClient.swift; sourceTree = "<group>"; };
+		A7503D361D917DA9006D2D27 /* GithubRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubRepository.swift; sourceTree = "<group>"; };
+		A7503D381D918022006D2D27 /* ReposDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReposDataStore.swift; sourceTree = "<group>"; };
 		A751898E1D8CBC600085BAC7 /* UsTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UsTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75189911D8CBC600085BAC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A75189931D8CBC600085BAC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +151,9 @@
 				A75189931D8CBC600085BAC7 /* ViewController.swift */,
 				A75189C21D8F65E50085BAC7 /* WebViewController.swift */,
 				A7503D301D9168BC006D2D27 /* ReposTableViewController.swift */,
+				A7503D341D917092006D2D27 /* GitHubAPIClient.swift */,
+				A7503D361D917DA9006D2D27 /* GithubRepository.swift */,
+				A7503D381D918022006D2D27 /* ReposDataStore.swift */,
 				A7503D321D916920006D2D27 /* Secrets.swift */,
 				A75189951D8CBC600085BAC7 /* Main.storyboard */,
 				A751899B1D8CBC600085BAC7 /* Assets.xcassets */,
@@ -456,8 +465,11 @@
 				A7503D331D916920006D2D27 /* Secrets.swift in Sources */,
 				A75189941D8CBC600085BAC7 /* ViewController.swift in Sources */,
 				A751899A1D8CBC600085BAC7 /* UsTwo.xcdatamodeld in Sources */,
+				A7503D371D917DA9006D2D27 /* GithubRepository.swift in Sources */,
+				A7503D351D917092006D2D27 /* GitHubAPIClient.swift in Sources */,
 				A75189921D8CBC600085BAC7 /* AppDelegate.swift in Sources */,
 				A7503D311D9168BC006D2D27 /* ReposTableViewController.swift in Sources */,
+				A7503D391D918022006D2D27 /* ReposDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

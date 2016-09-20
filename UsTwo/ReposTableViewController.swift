@@ -2,34 +2,34 @@
 //  ReposTableViewController.swift
 //  UsTwo
 //
-//  Created by Irina Kalashnikova on 9/20/16.
+//  Created by Irina Ernst on 9/20/16.
 //  Copyright © 2016 Irina Ernst. All rights reserved.
 //
 
 import UIKit
 
-class ReposTableViewController: UIViewController {
-
+class ReposTableViewController: UITableViewController {
+    
+    let store = ReposDataStore.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        store.getRepositoriesWithCompletion {
+            OperationQueue.main.addOperation({
+                self.tableView.reloadData()
+            })
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return store.repositories.count
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "repoCell", for: indexPath)
+        let repository:GithubRepository = store.repositories[indexPath.row]
+        cell.textLabel?.text = repository.fullName
+        return cell
     }
-    */
-
+   
 }

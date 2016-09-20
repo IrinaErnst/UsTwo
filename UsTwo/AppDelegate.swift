@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import OHHTTPStubs
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

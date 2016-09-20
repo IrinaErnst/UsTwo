@@ -17,6 +17,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var backNavBar: UINavigationItem!
+    var toRepos: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,11 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         let back = UIBarButtonItem(title: "< Back", style: .plain, target: self, action: #selector(backButtonTapped))
         backNavBar.leftBarButtonItem = back
         
+        //if name == "Github"{
+        //    let repos = UIBarButtonItem(title: "Repos >", style: .plain, target: self, action: #selector(reposButtonTapped))
+        //    backNavBar.rightBarButtonItem = repos
+        //}
+        
         navBar.items = [backNavBar]
     }
 
@@ -66,6 +72,17 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     
     @IBAction func backButtonTapped(sender: UIBarButtonItem){
         self.presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func reposButtonTapped(sender: UIBarButtonItem){
+        
+        let reposVC = ReposTableViewController()
+        
+        // TODO: do any setup you need for reposVC
+        present(reposVC, animated: true, completion: nil)
+        
+//        [self presentModalViewController:myNewVC animated:YES];
+//        self.performSegue(withIdentifier: "reposSegue", sender: sender)
     }
 
 }
