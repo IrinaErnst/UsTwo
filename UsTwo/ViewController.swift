@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import LocalAuthentication
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var myProfileImageView: UIImageView!
     @IBOutlet weak var linkedInImageView: UIImageView!
     @IBOutlet weak var githubImageView: UIImageView!
-    @IBOutlet weak var facebookImageView: UIImageView!
+    @IBOutlet weak var blogImageView: UIImageView!
     @IBOutlet weak var messageImageView: UIImageView!
     var hireMeButton: UIButton!
     
@@ -23,6 +24,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomStackImageViewsConstraint: NSLayoutConstraint!
     @IBOutlet weak var widthMyProfileImageViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightMyProfileImageViewConstraint: NSLayoutConstraint!
+    
+    var iconName:String!
     
 
     override func viewDidLoad() {
@@ -53,7 +56,7 @@ class ViewController: UIViewController {
     }
     
     func setStackImages(){
-        let socialMediaImageViews: Array<UIImageView> = [linkedInImageView, githubImageView, facebookImageView, messageImageView]
+        let socialMediaImageViews: Array<UIImageView> = [linkedInImageView, githubImageView, blogImageView, messageImageView]
         var num = 0
         for item in socialMediaImageViews {
             switch item {
@@ -63,8 +66,8 @@ class ViewController: UIViewController {
             case githubImageView:
                 item.image = #imageLiteral(resourceName: "Github")
                 num = 2
-            case facebookImageView:
-                item.image = #imageLiteral(resourceName: "Facebook")
+            case blogImageView:
+                item.image = #imageLiteral(resourceName: "Blog")
                 num = 3
             case messageImageView:
                 item.image = #imageLiteral(resourceName: "Message")
@@ -107,9 +110,9 @@ class ViewController: UIViewController {
     
     func animateMyProforileImageView() {
         UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 3, options: [.autoreverse], animations: {
-            self.widthMyProfileImageViewConstraint.constant = 320
-            self.heightMyProfileImageViewConstraint.constant = 320
-            self.myProfileImageView.layer.cornerRadius = CGFloat(160)
+            self.myProfileImageView.layer.cornerRadius = CGFloat(140)
+            self.widthMyProfileImageViewConstraint.constant = 280
+            self.heightMyProfileImageViewConstraint.constant = 280
             self.myProfileImageView.image = #imageLiteral(resourceName: "Monkey Surprised")
             self.view.layoutIfNeeded()
             }) { (isFinished) in
@@ -125,25 +128,35 @@ class ViewController: UIViewController {
         if let item = sender.view?.tag {
             switch item {
             case 1:
-                print("TAPPED LIKED IN")
-                self.performSegue(withIdentifier: "LinkedInSegue", sender: nil)
+                print("TAPPED LINKED IN")
+                iconName = "Linked In"
+                print("IconName: %@", iconName)
+                self.performSegue(withIdentifier: "webSegue", sender: sender)
             case 2:
                 print("TAPPED GITHUB")
+                self.iconName = "Github"
+                self.performSegue(withIdentifier: "webSegue", sender: sender)
             case 3:
-                print("TAPPED GITHUB")
+                self.iconName = "Blog"
+                self.performSegue(withIdentifier: "webSegue", sender: sender)
             case 4:
                 print("TAPPED MSG")
+                self.iconName = "Message"
             default:
                 print("ERROR")
             }
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "LinkedInSegue" {
-//            
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("PREPARE SEGUE")
+        if segue.identifier == "webSegue" {
+            let webViewController = segue.destination as? WebViewController
+            print("ICONNAME: %@", iconName)
+            webViewController?.name = iconName
+            print(webViewController?.name)
+        }
+    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let isPortrait = size.height > size.width

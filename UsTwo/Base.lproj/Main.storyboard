@@ -69,9 +69,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="SZv-qd-Qn6"/>
                     <connections>
+                        <outlet property="blogImageView" destination="1q4-HM-Lc9" id="yt5-BB-Ina"/>
                         <outlet property="bottomMyPortfolioImageViewConstraint" destination="KTI-Dy-AGi" id="Ass-zc-kwR"/>
                         <outlet property="bottomStackImageViewsConstraint" destination="ff3-T7-kNy" id="Jdp-j6-VwX"/>
-                        <outlet property="facebookImageView" destination="1q4-HM-Lc9" id="YPz-EC-QC8"/>
                         <outlet property="githubImageView" destination="qEF-j9-Isg" id="02U-sb-cd9"/>
                         <outlet property="heightMyProfileImageViewConstraint" destination="t9D-bI-QR4" id="keK-Nc-MS9"/>
                         <outlet property="linkedInImageView" destination="kk1-b1-IHL" id="h7G-7e-qfZ"/>
@@ -83,16 +83,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Va0-WH-826">
                     <connections>
-                        <segue destination="Gsd-kg-tBy" kind="presentation" identifier="LinkedInSegue" id="EN5-SW-a5M"/>
+                        <segue destination="FMN-Cj-mtj" kind="show" identifier="webSegue" id="QE3-0W-Lpd"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1663" y="139"/>
         </scene>
-        <!--Linked In View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="G9J-es-dD7">
             <objects>
-                <viewController id="FMN-Cj-mtj" customClass="LinkedInViewController" customModule="UsTwo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FMN-Cj-mtj" customClass="WebViewController" customModule="UsTwo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ygP-Eb-G0O"/>
                         <viewControllerLayoutGuide type="bottom" id="EYp-OU-OJN"/>
@@ -101,36 +101,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QoI-w9-uh4">
-                                <frame key="frameInset" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nf2-z3-krT">
+                                <items>
+                                    <navigationItem id="zpf-8p-gX8"/>
+                                </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nf2-z3-krT" firstAttribute="leading" secondItem="82r-Zv-vAW" secondAttribute="leading" id="RPc-eE-7dR"/>
+                            <constraint firstAttribute="trailing" secondItem="Nf2-z3-krT" secondAttribute="trailing" id="h1h-vw-Qau"/>
+                            <constraint firstItem="Nf2-z3-krT" firstAttribute="top" secondItem="ygP-Eb-G0O" secondAttribute="bottom" id="tap-WR-1bg"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="3UT-5e-R2I"/>
+                    <connections>
+                        <outlet property="backNavBar" destination="zpf-8p-gX8" id="1f7-vf-8xt"/>
+                        <outlet property="navBar" destination="Nf2-z3-krT" id="pOE-o2-Fhi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LNm-wO-T67" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2618" y="139"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="3j1-kF-XKO">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TCJ-N9-kkx" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gsd-kg-tBy" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="psX-B9-1jE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="FMN-Cj-mtj" kind="relationship" relationship="rootViewController" id="3OS-0z-jEg"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="1847.2" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

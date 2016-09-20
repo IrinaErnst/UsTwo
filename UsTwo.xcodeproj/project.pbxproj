@@ -15,7 +15,8 @@
 		A751899F1D8CBC600085BAC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A751899D1D8CBC600085BAC7 /* LaunchScreen.storyboard */; };
 		A75189AA1D8CBC600085BAC7 /* UsTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189A91D8CBC600085BAC7 /* UsTwoTests.swift */; };
 		A75189B51D8CBC600085BAC7 /* UsTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189B41D8CBC600085BAC7 /* UsTwoUITests.swift */; };
-		A75189C31D8F65E50085BAC7 /* LinkedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189C21D8F65E50085BAC7 /* LinkedInViewController.swift */; };
+		A75189C31D8F65E50085BAC7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75189C21D8F65E50085BAC7 /* WebViewController.swift */; };
+		A79023451D90A6FD001E8D63 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A79023441D90A6FD001E8D63 /* LocalAuthentication.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +51,8 @@
 		A75189B01D8CBC600085BAC7 /* UsTwoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UsTwoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A75189B41D8CBC600085BAC7 /* UsTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsTwoUITests.swift; sourceTree = "<group>"; };
 		A75189B61D8CBC600085BAC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A75189C21D8F65E50085BAC7 /* LinkedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedInViewController.swift; sourceTree = "<group>"; };
+		A75189C21D8F65E50085BAC7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A79023441D90A6FD001E8D63 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A79023451D90A6FD001E8D63 /* LocalAuthentication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,7 @@
 				A75189A81D8CBC600085BAC7 /* UsTwoTests */,
 				A75189B31D8CBC600085BAC7 /* UsTwoUITests */,
 				A751898F1D8CBC600085BAC7 /* Products */,
+				A79023431D90A6FD001E8D63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,7 +107,7 @@
 			children = (
 				A75189911D8CBC600085BAC7 /* AppDelegate.swift */,
 				A75189931D8CBC600085BAC7 /* ViewController.swift */,
-				A75189C21D8F65E50085BAC7 /* LinkedInViewController.swift */,
+				A75189C21D8F65E50085BAC7 /* WebViewController.swift */,
 				A75189951D8CBC600085BAC7 /* Main.storyboard */,
 				A751899B1D8CBC600085BAC7 /* Assets.xcassets */,
 				A751899D1D8CBC600085BAC7 /* LaunchScreen.storyboard */,
@@ -129,6 +133,14 @@
 				A75189B61D8CBC600085BAC7 /* Info.plist */,
 			);
 			path = UsTwoUITests;
+			sourceTree = "<group>";
+		};
+		A79023431D90A6FD001E8D63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A79023441D90A6FD001E8D63 /* LocalAuthentication.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A75189C31D8F65E50085BAC7 /* LinkedInViewController.swift in Sources */,
+				A75189C31D8F65E50085BAC7 /* WebViewController.swift in Sources */,
 				A75189941D8CBC600085BAC7 /* ViewController.swift in Sources */,
 				A751899A1D8CBC600085BAC7 /* UsTwo.xcdatamodeld in Sources */,
 				A75189921D8CBC600085BAC7 /* AppDelegate.swift in Sources */,
